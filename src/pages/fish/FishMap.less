@@ -1,0 +1,192 @@
+.container {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding-bottom: 3px;
+
+  &::-webkit-scrollbar-track-piece {
+    //滚动条凹槽的颜色，还可以设置边框属性
+    background-color: #f2eabc;
+  }
+
+  &::-webkit-scrollbar {
+    //滚动条的宽度
+    width: 9px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    //滚动条的设置
+    background-color: #dcd1a0;
+    background-clip: padding-box;
+    min-height: 28px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #dcd1a0;
+  }
+
+  .card_list {
+
+    .card {
+      float: left;
+      width: 100px;
+      text-align: center;
+      border: 2px solid #dcd1a0;
+      margin: 2px;
+      border-radius: 4px;
+      padding: 5px 0;
+      cursor: pointer;
+      position: relative;
+      transition: .2s;
+
+      img {
+        width: 60px;
+      }
+
+      .pic {
+        width: auto;
+        height: 52px;
+        margin: 0 auto;
+      }
+
+      &.canGet {
+        border-color: #ef5a3c;
+        box-shadow: 0 0 0 1px #ef5a3c;
+      }
+
+      &.active {
+        border-color: #8a7b66;
+        box-shadow: 0 0 0 1px #8a7b66;
+      }
+
+      &.isMark {
+        background: #dcd1a0;
+
+      }
+
+
+      .tips_img {
+        display: none;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+
+        &.show {
+          display: block;
+        }
+      }
+
+      .next_img {
+        display: none;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 40px;
+
+        &.show {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.info_content {
+  .info_card {
+    margin-right: 28px;
+    font-size: 16px;
+
+    .title {
+      display: inline-block;
+      font-size: 20px;
+      color: #243e19;
+      background: #bddfab;
+      font-weight: 600;
+      line-height: 26px;
+      padding: 0 12px 0 6px;
+      font-style: italic;
+      margin: 16px 6px 6px 0;
+    }
+
+    p {
+      text-align: center;
+      margin: 3px 0 0 0;
+    }
+  }
+
+  .month_table {
+    width: 241px;
+    border-left: 1px solid #a3986a;
+    border-top: 1px solid #a3986a;
+    overflow: hidden;
+    margin-top: 6px;
+
+    >div {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 900;
+      font-style: italic;
+      float: left;
+      width: 60px;
+      border-right: 1px solid #a3986a;
+      border-bottom: 1px solid #a3986a;
+
+      >span {
+        line-height: 25px;
+        display: inline-block;
+        width: 48px;
+        border-radius: 3px;
+        font-size: 18px;
+      }
+    }
+
+    .normal {
+      color: #d6cc9b;
+    }
+
+    .active {
+      background: #c8cd37;
+      color: #333;
+    }
+  }
+
+  .close {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .info_content {
+    position: fixed;
+    top: 8px;
+    left: 2%;
+    width: 96%;
+    padding: 0px 8px 8px 8px;
+    background: #f2eabc;
+    z-index: 2;
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, .2);
+
+    .info_card {
+
+      p {
+        text-align: left;
+        margin: 0;
+      }
+
+      .title {
+        margin: 8px 4px 4px 0;
+      }
+    }
+
+    .close {
+      display: block;
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      width: 24px;
+    }
+  }
+
+}

@@ -1,0 +1,85 @@
+.time_box {
+    width: 192px;
+    padding-top: 24px;
+}
+
+.time_num {
+    position: relative;
+    font-size: 18px;
+
+    >span {
+        position: absolute;
+        top: -24px;
+    }
+}
+
+.time_line {
+    display: flex;
+    position: relative;
+    border-bottom: 2px solid #8a7b66;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        height: 30px;
+        border-right: 2px solid #8a7b66;
+    }
+
+    .item {
+
+        position: relative;
+        width: 16px;
+        height: 30px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            border-left: 2px solid #8a7b66;
+        }
+
+        .fill {
+            position: absolute;
+            bottom: 4px;
+            left: 1px;
+            height: 22px;
+            background: #c8cd37;
+
+            &.active {
+                width: 100%;
+            }
+        }
+    }
+
+    .long {
+        &:before {
+            bottom: 0;
+            height: 30px;
+        }
+    }
+
+    .middle {
+        &:before {
+            bottom: 7px;
+            height: 16px;
+        }
+    }
+
+    .short {
+        &:before {
+            bottom: 12px;
+            height: 9px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .time_box {
+        display: none;
+    }
+}
